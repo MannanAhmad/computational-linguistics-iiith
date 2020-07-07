@@ -1,0 +1,94 @@
+*****  Functionality presented in Forming Sentences -2  ***** 
+
+
+
+1. Index.html page contains js, jquery that linked this page to the other pages.
+
+
+
+2. When clicked on the INTRODUCTION, it is redirecting to the Introduction.html page.
+
+    This page contains basic information about the experiment.
+
+
+
+3. When clicked on THEORY, it is redirecting to the Theory.html page. This page
+
+    contains JS plugin's, Bootstrap core javaScript and basic information about what is a clause
+
+    and classification of clauses.
+
+
+
+4. When clicked on OBJECTIVE, it is redirecting to the Objective.html page. This
+
+    the page contains information and the objective of this experiment.
+
+
+
+5.  When clicked on EXPERIMENT, It is redirecting to the Experiment.html page. This page linked with PHP file
+
+     i.e CLExperiment2.php and when clicked on EXPERIMENT then it automatically called the CLExperiment2.php file. 
+
+    This PHP file contains HTML and js which allow us to choose one language from a given select language menu. When 
+
+    we choose any language either Hindi or English it will redirect to the exp2-corpus folder and select language based on user choice.
+
+     this folder contains two files English and Hindi, both files contain some sentences inside them. This
+
+     PHP file contains many functions firstly as the user selects any language the select function will activate which will randomly
+
+     select any sentence from the following sentences which are written in that particular file Hindi or English, this function split the
+
+     whole sentence into several buttons. when clicking on any button this will pull that sentence from there and push it to the below
+   
+    that line as user select any button the "Re-form the sentence"  button is activated. if the user clicks that button then clears function
+    
+    get activated that will reset the present state of the sentence. When a user selects all the buttons then "Check the correctness of this
+
+   sentence" button is activated and if a user clicks on it then check function is executed and if the sentence is in proper order then it
+
+   shows the correct answer and if the answer is not correct then it shows the Wrong answer and "Get Correct Sentence" button is 
+
+   activated. When users click on it getAnswer function is executed and it shows all the correct answers.if the user again clicks on 
+
+   this button then hideAnswer function is executed and it hides the answer.
+
+
+
+6.  When clicked on QUIZZES, it is redirecting to the Quizzes.html page. This page contains some quizzes in Hindi and English
+
+     both languages.
+
+
+
+7.   When clicked on PROCEDURE, it is redirecting to the Procedure.html page. This page contains all basic steps which will guide
+
+      users how to form sentences in this experiment.
+
+
+
+
+
+
+
+
+
+***** Missing Functionality which should be added in this lab. *****
+
+
+
+
+
+1. When clicked on QUIZZES link and when we are inside the QUIZZES
+
+page their functionality is missing to choose the correct option in the given question.
+
+
+
+2. The footer part is missing in the pages.
+
+
+
+3. When clicked on IIIT-H it should be redirected to the official page of IIITH.
+
