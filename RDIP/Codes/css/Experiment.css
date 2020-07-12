@@ -72,9 +72,9 @@ h1 {
 
 #dis3{
     position: absolute;
-    width: 900px;
+    text-align: center;
     top: 43%;
-    left: 64%;
+    left: 50%;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     transform: translate(-50%, -50%);
     font-size: 25px;
@@ -83,8 +83,8 @@ h1 {
 #dis4{
     position: absolute;
     width: 900px;
-    top: 63%;
-    left: 68%;
+    top: 65%;
+    left: 73%;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     transform: translate(-50%, -50%);
     font-size: 40px;
@@ -92,12 +92,14 @@ h1 {
 
 #dis6{
     position: absolute;
-    width: 900px;
-    top: 80%;
-    left: 68%;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+    top: 105%;
+    left: 50%;
+    font-family: Georgia, 'Times New Roman', Times, serif;
     transform: translate(-50%, -50%);
     font-size: 25px;
+    margin-bottom: 40px;
+    
 }
 
 
@@ -117,7 +119,7 @@ h1 {
     font-size:20px ;
     padding:8px ;
     margin-right:6px ;
-    top: 56%;
+    top: 58%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
@@ -127,7 +129,7 @@ h1 {
     font-size:20px ;
     padding:8px ;
     margin-right:6px ;
-    top: 70%;
+    top: 73%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
