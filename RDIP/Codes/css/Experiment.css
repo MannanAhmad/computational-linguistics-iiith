@@ -1,5 +1,5 @@
 h1 {
-    margin: 130px 170px;
+    margin: 50px 100px;
     font-family: Helvetica ;
     font-weight:500;
 }
@@ -11,7 +11,7 @@ h1 {
     width: 230px;
     font-size: 20px;
     position: absolute;
-    top: 28%;
+    top: 12%;
     left: 50%;
     transform: translate(-50%, -50%);
 
@@ -22,7 +22,7 @@ h1 {
 
     /* width: 300px; */
     position: absolute;
-    top: 54%;
+    top: 33%;
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: 30px;
@@ -35,7 +35,7 @@ h1 {
 #dis{
     position: absolute;
     width: 900px;
-    top: 45%;
+    top: 25%;
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: 23px;
@@ -45,7 +45,7 @@ h1 {
 #dis1{
     position: absolute;
     width: 900px;
-    top: 50%;
+    top: 29%;
     left: 68%;
     transform: translate(-50%, -50%);
     font-size: 20px;
@@ -58,7 +58,7 @@ h1 {
     
     position: absolute;
     width: 900px;
-    top: 68%;
+    top: 42%;
     left: 64%;
     transform: translate(-50%, -50%);
     font-size: 23px;
@@ -69,8 +69,8 @@ h1 {
 #dis3{
     position: absolute;
     width: 900px;
-    top: 73%;
-    left: 64%;
+    top: 46%;
+    left: 66%;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     transform: translate(-50%, -50%);
     font-size: 24px;
@@ -81,7 +81,8 @@ h1 {
     font-size:20px ;
     padding:8px ;
     margin-right:6px ;
-    top: 85%;
+    top: 52%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
