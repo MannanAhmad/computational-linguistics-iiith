@@ -2,6 +2,7 @@ let selection = document.getElementById("choose-lang");
 $("#hide").hide()
 $("#hide1").hide()
 
+let startVal, updateVal;
 let k;
 
 
@@ -15,6 +16,11 @@ function butnDisplay(id, value) {
     document.getElementById("dis3").innerHTML = valueToBeDisplay;
     $("#hide").show()
     document.getElementById(id).style.display = "none";
+    startVal ++; 
+    if(startVal == updateVal){
+        // alert("run")
+        $("#hide1").show()
+    }
     
 }
 
@@ -100,6 +106,7 @@ run = function () {
         document.getElementById("dis3").innerHTML = " "
         valueToBeDisplay = "";
         $("#hide").hide()
+        $("#hide1").hide()
 
 
         // convert words of sentence into buttons for English sentence
@@ -108,13 +115,14 @@ run = function () {
 
         let gettingValue = englishArray[changeWords][0];
         k = randomizeValue(gettingValue);
-
+        startVal = 0
+        updateVal = 0
         let n = "";
         for (i = 0; i <= k.length - 1; i++) {
             val = k[i];
             let m = "<button style= 'font-size:20px ; padding:8px ; margin-right:6px ' id='btn1" + i + "' onclick='butnDisplay(this.id,this.value)' value='" + val + "'>" + val + "</button>  ";
             n += m;
-
+            updateVal++
         }
         document.getElementById("val").innerHTML = n
 
@@ -200,16 +208,19 @@ run = function () {
         document.getElementById("dis3").innerHTML = " "
         valueToBeDisplay = "";
         $("#hide").hide()
+        $("#hide1").hide()
         // Converting words into buttons of hindi sentence
         let gettingValue = hindiArray[randomizeWords][0];
         k = randomizeValue(gettingValue);
+        startVal = 0
+        updateVal = 0
         let n = "";
 
         for (i = 0; i <= k.length - 1; i++) {
             val = k[i];
             let m = "  <button style= 'font-size:20px ; padding:8px ; margin-right:6px ' id='btn1" + i + "' onclick='butnDisplay(this.id,this.value)' value='" + val + "'>" + val + "</button>  ";
             n += m;
-
+            updateVal++
         }
         document.getElementById("val").innerHTML = n
 
@@ -220,6 +231,7 @@ run = function () {
         document.getElementById("dis2").innerHTML = ""
         document.getElementById("dis3").innerHTML = ""
         $("#hide").hide()
+        $("#hide1").hide()
         alert("Choose any language")
     }
 }
@@ -235,5 +247,6 @@ function reset() {
     document.getElementById("dis2").innerHTML = ""
     document.getElementById("dis3").innerHTML = ""
     valueToBeDisplay = ""
-    $("#hide").hide()
+    startVal = 0
+    $("#hide1").hide()
 }

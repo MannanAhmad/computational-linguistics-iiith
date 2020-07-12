@@ -86,3 +86,12 @@ h1 {
     transform: translate(-50%, -50%);
 }
 
+#hide1{
+    position: absolute;
+    font-size:20px ;
+    padding:8px ;
+    margin-right:6px ;
+    top: 59%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
