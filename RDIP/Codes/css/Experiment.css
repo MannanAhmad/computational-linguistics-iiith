@@ -80,7 +80,7 @@ h1 {
     position: absolute;
     width: 900px;
     top: 72%;
-    left: 72%;
+    left: 70%;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     transform: translate(-50%, -50%);
     font-size: 40px;
@@ -102,6 +102,16 @@ h1 {
     padding:8px ;
     margin-right:6px ;
     top: 63%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#hide2{
+    position: absolute;
+    font-size:20px ;
+    padding:8px ;
+    margin-right:6px ;
+    top: 79%;
     left: 50%;
     transform: translate(-50%, -50%);
 }

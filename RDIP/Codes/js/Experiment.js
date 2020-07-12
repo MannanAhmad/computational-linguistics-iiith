@@ -1,6 +1,7 @@
 let selection = document.getElementById("choose-lang");
 $("#hide").hide()
 $("#hide1").hide()
+$("#hide2").hide()
 let startVal , updateVal;
 var k;
 
@@ -32,6 +33,7 @@ function butnDisplay(id, value) {
         // alert("run")
         $("#hide1").show()
     }  
+
 }
 
 //functionality of reset button
@@ -52,6 +54,7 @@ function reset(){
     valueToBeDisplay = ""
     $("#hide").hide()
     $("#hide1").hide()
+    $("#hide2").hide()
 
 
 }
@@ -130,6 +133,7 @@ run = function () {
         valueToBeDisplay = "";
         $("#hide").hide()
         $("#hide1").hide()
+        $("#hide2").hide()
         
         // convert words of sentence into buttons for English sentence
 
@@ -232,6 +236,7 @@ run = function () {
         valueToBeDisplay = "";
         $("#hide").hide()
         $("#hide1").hide()
+        $("#hide2").hide()
         // Converting words into buttons of hindi sentence
         let gettingValue = hindiArray[randomizeWords][0];
 		k = randomizeValue(gettingValue);
@@ -258,6 +263,7 @@ run = function () {
 
         $("#hide").hide()
         $("#hide1").hide()
+        $("#hide2").hide()
         alert("Choose any language")
     }
 }
@@ -351,10 +357,11 @@ let answerKeyValue = ['John ate an apple before afternoon',
              document.getElementById("dis4").innerHTML = "Right answer!!!"
             document.getElementById("dis4").style.color = "green"
              return  document.getElementById("dis4").innerHTML = "Right answer!!!"
-            
+             
             }
             document.getElementById("dis4").innerHTML = "Wrong answer!!!"
             document.getElementById("dis4").style.color = "red"
+            
         }
-     
+        $("#hide2").show()
  }
