@@ -1,71 +1,72 @@
 let selection = document.getElementById("choose-lang");
+let startVal , updateVal,k;
+
 $("#hide").hide()
 $("#hide1").hide()
 $("#hide2").hide()
-let startVal , updateVal;
-var k;
 
 
-function randomizeValue(data) {
-	var mix = data.split(" ");
-	var i = mix.length, temp, index;
-	while (0 !== i) {
-		index = Math.floor(Math.random() * i);
-		i --;
-		temp = mix[i];
-		mix[i] = mix[index];
-		mix[index] = temp;
-	}
-	return mix;
-}
+let firstHindiSentence = ['राम और श्याम बाजार गयें',
+'राम और श्याम गयें बाजार',
+'बाजार गयें राम और श्याम',
+'गयें बाजार राम और श्याम'
 
+];
+let secondHindiSentence = ['राम सोया और श्याम भी',
+'श्याम सोया और राम भी',
+'सोया श्याम और राम भी',
+'सोया राम और श्याम भी'
+];
+let thirdHindiSentence = ['मैंने उसे बताया कि राम सो रहा है',
+'मैंने उसे बताया कि सो रहा है राम',
+'उसे मैंने बताया कि राम सो रहा है',
+'उसे मैंने बताया कि सो रहा है राम',
+'मैंने बताया उसे कि राम सो रहा है',
+'मैंने बताया उसे कि सो रहा है राम',
+'उसे बताया मैंने कि राम सो रहा है',
+'उसे बताया मैंने कि सो रहा है राम',
+'बताया मैंने उसे कि राम सो रहा है',
+'बताया मैंने उसे कि सो रहा है राम',
+'बताया उसे मैंने कि राम सो रहा है',
+'बताया उसे मैंने कि सो रहा है राम'
+];
+let fourthHindiSentence = ['राम खाकर सोया',
+'खाकर राम सोया',
+'राम सोया खाकर',
+'खाकर सोया राम',
+'सोया राम खाकर',
+'सोया खाकर राम'
+];
+let fifthHindiSentence = ['बिल्लियों को मारकर कुत्ता सो गया	',
+'मारकर बिल्लियों को कुत्ता सो गया',
+'बिल्लियों को मारकर सो गया कुत्ता',
+'मारकर बिल्लियों को सो गया कुत्ता',
+'कुत्ता सो गया बिल्लियों को मारकर',
+'कुत्ता सो गया मारकर बिल्लियों को',
+'सो गया कुत्ता बिल्लियों को मारकर',
+'सो गया कुत्ता मारकर बिल्लियों को'
+];
+let sixHindiSentence = ['एक लाल किताब वहाँ है',
+'एक लाल किताब है वहाँ',
+'वहाँ है एक लाल किताब',
+'है वहाँ एक लाल किताब'
+];
+let seventhHindiSentence = ['एक बड़ी सी किताब वहाँ है',
+'एक बड़ी सी किताब है वहाँ',
+'बड़ी सी एक किताब वहाँ है',
+'बड़ी सी एक किताब है वहाँ',
+'वहाँ है एक बड़ी सी किताब',
+'वहाँ है बड़ी सी एक किताब',
+'है वहाँ एक बड़ी सी किताब',
+'है वहाँ बड़ी सी एक किताब'
+];
 
-let valueToBeDisplay = "";
-function butnDisplay(id, value) {
-    
-	document.getElementById("dis2").innerHTML = "Formed Sentence (after selecting words):";
-    valueToBeDisplay += value + " ";
-    document.getElementById("dis3").innerHTML = valueToBeDisplay;
-    $("#hide").show()
-    document.getElementById(id).style.display = "none";
-    startVal ++; 
-    if(startVal == updateVal){
-        // alert("run")
-        $("#hide1").show()
-    }  
+// Creating nested array of hindi sentences
 
-}
+let hindiArray = [firstHindiSentence, secondHindiSentence, thirdHindiSentence, fourthHindiSentence,
+fifthHindiSentence, sixHindiSentence, seventhHindiSentence];
 
-//functionality of reset button
-
-function reset(){
-    
-    for (i = 0; i <= k.length - 1; i++) 
-     {
-       document.getElementById('btn1'+i).style.display = "";
-        
-    }
-    
-    document.getElementById("dis2").innerHTML = ""
-    document.getElementById("dis3").innerHTML = ""
-    document.getElementById("dis4").innerHTML = ""
-    // document.getElementById("dis4").innerHTML = ""
-    startVal = 0
-    valueToBeDisplay = ""
-    $("#hide").hide()
-    $("#hide1").hide()
-    $("#hide2").hide()
-
-
-}
-
-
-
-run = function () {
-
-    // For English language
-    if (selection.value === "eng") {
-        let firstEnglishSentence = ['John ate an apple before afternoon',
+let firstEnglishSentence = ['John ate an apple before afternoon',
             'before afternoon John ate an apple',
             'John before afternoon ate an apple'
         ];
@@ -115,13 +116,77 @@ run = function () {
         let englishArray = [firstEnglishSentence, secondEnglishSentence, thirdEnglishSentence, fourthEnglishSentence,
             fifthEnglishSentence, sixEnglishSentence, seventhEnglishSentence, eightEnglishSentence, ninethEnglishSentence, tenthEnglishSentence];
 
+
+function randomizeValue(data) {
+	var mix = data.split(" ");
+	var i = mix.length, temp, index;
+	while (0 !== i) {
+		index = Math.floor(Math.random() * i);
+		i --;
+		temp = mix[i];
+		mix[i] = mix[index];
+		mix[index] = temp;
+	}
+	return mix;
+}
+
+
+let valueToBeDisplay = "";
+function butnDisplay(id, value) {
+    
+	document.getElementById("dis2").innerHTML = "Formed Sentence (after selecting words):";
+    valueToBeDisplay += value + " ";
+    document.getElementById("dis3").innerHTML = valueToBeDisplay;
+    $("#hide").show()
+    document.getElementById(id).style.display = "none";
+    startVal ++; 
+    if(startVal == updateVal){
+        // alert("run")
+        $("#hide1").show()
+    }  
+
+}
+
+//functionality of reset button
+
+function reset(){
+    
+    for (i = 0; i <= k.length - 1; i++) 
+     {
+       document.getElementById('btn1'+i).style.display = "";
+        
+    }
+    
+    document.getElementById("dis2").innerHTML = ""
+    document.getElementById("dis3").innerHTML = ""
+    document.getElementById("dis4").innerHTML = ""
+    document.getElementById("dis5").innerHTML = ""
+    document.getElementById("dis6").innerHTML = ""
+    // document.getElementById("dis4").innerHTML = ""
+    startVal = 0
+    getAns = ""
+    valueToBeDisplay = ""
+    $("#hide").hide()
+    $("#hide1").hide()
+    
+
+
+}
+
+let changeWords
+
+run = function () {
+
+    // For English language
+    if (selection.value === "eng") {
+        
         //Genrating randome array form nested array
 
         document.getElementById("dis1").innerHTML = "(select the buttons in proper order)"
         document.getElementById("dis").innerHTML = "Form a sentence (Declarative or Interrogative or any other type) from the given words"
 
         // Randomizing words of Sentence 
-        let changeWords = Math.floor(Math.random()*englishArray.length)
+        changeWords = Math.floor(Math.random()*englishArray.length)
 
         // console.log(changeWords)
        
@@ -129,11 +194,12 @@ run = function () {
         document.getElementById("dis2").innerHTML = " "
         document.getElementById("dis3").innerHTML = " "
         document.getElementById("dis4").innerHTML = " "
-
+        document.getElementById("dis5").innerHTML = " "
+        document.getElementById("dis6").innerHTML = " "
+        getAns = ""
         valueToBeDisplay = "";
         $("#hide").hide()
         $("#hide1").hide()
-        $("#hide2").hide()
         
         // convert words of sentence into buttons for English sentence
 
@@ -158,66 +224,7 @@ run = function () {
 
     else if (selection.value === "hnd") {
 
-        let firstHindiSentence = ['राम और श्याम बाजार गयें',
-            'राम और श्याम गयें बाजार',
-            'बाजार गयें राम और श्याम',
-            'गयें बाजार राम और श्याम'
-
-        ];
-        let secondHindiSentence = ['राम सोया और श्याम भी',
-            'श्याम सोया और राम भी',
-            'सोया श्याम और राम भी',
-            'सोया राम और श्याम भी'
-        ];
-        let thirdHindiSentence = ['मैंने उसे बताया कि राम सो रहा है',
-            'मैंने उसे बताया कि सो रहा है राम',
-            'उसे मैंने बताया कि राम सो रहा है',
-            'उसे मैंने बताया कि सो रहा है राम',
-            'मैंने बताया उसे कि राम सो रहा है',
-            'मैंने बताया उसे कि सो रहा है राम',
-            'उसे बताया मैंने कि राम सो रहा है',
-            'उसे बताया मैंने कि सो रहा है राम',
-            'बताया मैंने उसे कि राम सो रहा है',
-            'बताया मैंने उसे कि सो रहा है राम',
-            'बताया उसे मैंने कि राम सो रहा है',
-            'बताया उसे मैंने कि सो रहा है राम'
-        ];
-        let fourthHindiSentence = ['राम खाकर सोया',
-            'खाकर राम सोया',
-            'राम सोया खाकर',
-            'खाकर सोया राम',
-            'सोया राम खाकर',
-            'सोया खाकर राम'
-        ];
-        let fifthHindiSentence = ['बिल्लियों को मारकर कुत्ता सो गया	',
-            'मारकर बिल्लियों को कुत्ता सो गया',
-            'बिल्लियों को मारकर सो गया कुत्ता',
-            'मारकर बिल्लियों को सो गया कुत्ता',
-            'कुत्ता सो गया बिल्लियों को मारकर',
-            'कुत्ता सो गया मारकर बिल्लियों को',
-            'सो गया कुत्ता बिल्लियों को मारकर',
-            'सो गया कुत्ता मारकर बिल्लियों को'
-        ];
-        let sixHindiSentence = ['एक लाल किताब वहाँ है',
-            'एक लाल किताब है वहाँ',
-            'वहाँ है एक लाल किताब',
-            'है वहाँ एक लाल किताब'
-        ];
-        let seventhHindiSentence = ['एक बड़ी सी किताब वहाँ है',
-            'एक बड़ी सी किताब है वहाँ',
-            'बड़ी सी एक किताब वहाँ है',
-            'बड़ी सी एक किताब है वहाँ',
-            'वहाँ है एक बड़ी सी किताब',
-            'वहाँ है बड़ी सी एक किताब',
-            'है वहाँ एक बड़ी सी किताब',
-            'है वहाँ बड़ी सी एक किताब'
-        ];
-
-        // Creating nested array of hindi sentences
-
-        let hindiArray = [firstHindiSentence, secondHindiSentence, thirdHindiSentence, fourthHindiSentence,
-            fifthHindiSentence, sixHindiSentence, seventhHindiSentence];
-
+      
         //Genrating randome array of hindi sentences form nested array
         
 
@@ -226,19 +233,21 @@ run = function () {
 
         // Randomizing words of sentence from list of hindi sentence
 
-        var randomizeWords = Math.floor(Math.random()*hindiArray.length)
+        changeWords = Math.floor(Math.random()*hindiArray.length)
 
         // console.log(randomizeWords)
         
         document.getElementById("dis2").innerHTML = " "
         document.getElementById("dis3").innerHTML = " "
         document.getElementById("dis4").innerHTML = " "
+        document.getElementById("dis5").innerHTML = " "
+        document.getElementById("dis6").innerHTML = " "
+        getAns = ""
         valueToBeDisplay = "";
         $("#hide").hide()
         $("#hide1").hide()
-        $("#hide2").hide()
         // Converting words into buttons of hindi sentence
-        let gettingValue = hindiArray[randomizeWords][0];
+        let gettingValue = hindiArray[changeWords][0];
 		k = randomizeValue(gettingValue);
 		startVal = 0
         updateVal = 0
@@ -259,11 +268,13 @@ run = function () {
         document.getElementById("dis2").innerHTML = ""
         document.getElementById("dis3").innerHTML = ""
         document.getElementById("dis4").innerHTML = ""
-        // document.getElementById("dis4").innerHTML = ""
+        document.getElementById("dis5").innerHTML = ""
+        document.getElementById("dis6").innerHTML = ""
+        // document.getElementById("dis7").innerHTML = ""
 
         $("#hide").hide()
         $("#hide1").hide()
-        $("#hide2").hide()
+        getAns = ""
         alert("Choose any language")
     }
 }
@@ -363,5 +374,46 @@ let answerKeyValue = ['John ate an apple before afternoon',
             document.getElementById("dis4").style.color = "red"
             
         }
-        $("#hide2").show()
+        document.getElementById("dis5").innerHTML = "<button id='hide2' onclick='getAnswers();'>GET CORRECT SENTENCE</button>"
  }
+let allAns,getAns;
+ function getAnswers(){
+    
+    getAns=""
+    allAns = 0
+    document.getElementById("dis6").innerHTML = ""
+	
+
+    if(selection.value=='hnd'){
+		allAns = hindiArray[changeWords].length-1;
+		document.getElementById('dis5').innerHTML = "<button id='hide2' onclick='hide()'>HIDE CORRECT SENTENCE</button>"
+		for(i=0;i<=allAns;i++){
+			getAns = getAns + hindiArray[changeWords][i]+"<br/>"
+		}
+		document.getElementById("dis6").innerHTML = getAns;
+	}else if (selection.value=='eng'){
+		allAns = englishArray[changeWords].length-1;
+		document.getElementById('dis5').innerHTML = "<button id='hide2' onclick='hide()'>HIDE CORRECT SENTENCE</button>"
+		for(i=0;i<=allAns;i++){
+			getAns = getAns + englishArray[changeWords][i]+"<br/>"
+		}
+		document.getElementById("dis6").innerHTML = getAns;
+	}
+   
+}
+
+hide = function(){
+	document.getElementById('dis5').innerHTML = "<button id='hide2' onclick='swapButton()'>GET CORRECT SENTENCE</button>"
+	document.getElementById("dis6").innerHTML = "";
+}
+
+
+
+swapButton = function(){
+    while(document.getElementById("dis6").innerHTML ==""){
+	
+		document.getElementById('dis5').innerHTML = "<button id='hide2' onclick='hide()'>HIDE CORRECT SENTENCE</button>"
+        document.getElementById("dis6").innerHTML = getAns;
+	}
+}
+
