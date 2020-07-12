@@ -2,12 +2,15 @@
     padding: 0px;
     margin: 0px;
 }
+
+/* heading styling */
 h1 {
     margin: 50px 100px;
     font-family: Helvetica ;
     font-weight:500;
 }
 
+/* dropdown menu styling */
 #choose-lang {
     padding: 3px;
     border: 2px solid black;
@@ -21,9 +24,8 @@ h1 {
 
 }
 
+
 #val {
-
-
     /* width: 300px; */
     position: absolute;
     top: 34%;
