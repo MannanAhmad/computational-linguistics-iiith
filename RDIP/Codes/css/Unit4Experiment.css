@@ -9,3 +9,15 @@ h1 {
     font-family: Helvetica ;
     font-weight:500;
 }
+
+#choose-corpus {
+    padding: 3px;
+    border: 2px solid black;
+    border-radius: 8px;
+    /* width: 230px; */
+    font-size: 20px;
+    position: absolute;
+    top: 12%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
