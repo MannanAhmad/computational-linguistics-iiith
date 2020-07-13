@@ -1,0 +1,11 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+
+/* heading styling */
+h1 {
+    margin: 50px 100px;
+    font-family: Helvetica ;
+    font-weight:500;
+}
