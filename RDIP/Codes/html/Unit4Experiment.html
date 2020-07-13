@@ -12,12 +12,28 @@
     <h1>Experiment</h1>
 
     <!-- dropdown menu -->
-    <select id="choose-corpus">
+    <select id="choose-corpus" onchange="run();">
         <option value="default">---Select a corpus---</option>
         <option value="corp1">Corpus 1</option>
         <option value="corp2">Corpus 2</option>
         <option value="corp3">Corpus 3</option>
     </select>
+
+    <p id="f1"></p>
+    <p id="f2"></p>
+    <table id="table">
+            <tr>
+                <td>#tokens:</td>
+                <td><input id="token" class="inp" type="text"></td>
+            </tr>
+            <tr>
+                <td>#types:</td>
+                <td><input id="types" class="inp" type="text"></td>
+            </tr>
+    </table>
+    
+    <button id="sub">Submit</button>
+    
 
     <!-- linking js file -->
     <script src="../js/Unit4Experiment.js"></script>

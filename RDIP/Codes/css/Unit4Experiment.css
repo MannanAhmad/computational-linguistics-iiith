@@ -21,3 +21,55 @@ h1 {
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
+#f1{
+
+    font-family: Verdana, Tahoma, sans-serif;
+    font-size: 21px;
+    text-align: justify;
+    width: 1200px;
+    margin: 0 auto;
+    padding: 8px;
+    
+}
+
+#f2{
+
+    font-family: Verdana,Tahoma, sans-serif;
+    font-size: 22px;
+    margin-top: 8px;
+    text-align: center;
+    padding: 8px;
+
+}
+
+#table{
+    border-collapse: collapse;
+    font-size: 22px;
+    margin: 0 auto;
+    
+}
+
+#table tr td{
+    border: 1px solid black;
+    padding: 10px;
+    text-align: center;
+    font-size: 23px;
+}
+
+.inp{
+    width: 50px;
+    padding: 5px;
+    text-align: center;
+    font-size: 22px;
+}
+
+#sub{
+    margin-top: 55px;
+    padding: 10px 39px; 
+    position: absolute;
+    left: 46%;
+    font-size: 19px;
+    transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+}
