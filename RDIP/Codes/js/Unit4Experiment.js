@@ -6,8 +6,11 @@ let thirdCorpus = ['A man had a little dog, and he was very fond of it. He would
 
 $("#table").hide()
 $("#sub").hide()
+$("#sub1").hide()
 $("#cont").hide()
+$("#lst").hide()
 document.getElementById("disAns").innerText = ""
+document.getElementById("msg").innerText = ""
 
 
 
@@ -15,6 +18,7 @@ let selection = document.getElementById("choose-corpus")
 
 run = function () {
     if (selection.value === 'corp1') {
+        document.getElementById("msg").innerText = ""
         document.getElementById("disAns").innerHTML = ""
         document.getElementById("token").value = ""
         document.getElementById("token").style.background = "white"
@@ -25,9 +29,12 @@ run = function () {
         $("#table").show()
         $("#sub").show()
         $("#cont").hide()
+        $("#lst").hide()
+        $("#sub1").hide()
         
     }
     else if (selection.value === 'corp2') {
+        document.getElementById("msg").innerHTML = ""
         document.getElementById("disAns").innerHTML = ""
         document.getElementById("token").value = ""
         document.getElementById("token").style.background = "white"
@@ -38,8 +45,11 @@ run = function () {
         $("#table").show()
         $("#sub").show()
         $("#cont").hide()
+        $("#lst").hide()
+        $("#sub1").hide()
     }
     else if (selection.value === 'corp3') {
+        document.getElementById("msg").innerHTML = ""
         document.getElementById("disAns").innerHTML = ""
         document.getElementById("token").value = ""
         document.getElementById("token").style.background = "white"
@@ -50,15 +60,20 @@ run = function () {
         $("#table").show()
         $("#sub").show()
         $("#cont").hide()
+        $("#lst").hide()
+        $("#sub1").hide()
     }
     else {
         alert("Select a corpus")
         document.getElementById("f1").innerHTML = ""
         document.getElementById("f2").innerHTML = ""
         document.getElementById("disAns").innerHTML = ""
+        document.getElementById("msg").innerHTML = ""
         $("#table").hide()
         $("#sub").hide()
         $("#cont").hide()
+        $("#lst").hide()
+        $("#sub1").hide()
         document.getElementById("token").value = ""
         document.getElementById("types").value = ""
     }
@@ -223,3 +238,11 @@ function checkAns() {
     }
 }
 
+function rootWord(){
+    document.getElementById("disAns").innerHTML = ""
+    $("#sub").hide()
+    $("#cont").hide()
+    $("#lst").show()
+    $("#sub1").show()
+    document.getElementById("msg").innerText = "Now, consider all the tokens with the same 'root' word to be of the same type. Recalculate the number of types."
+}

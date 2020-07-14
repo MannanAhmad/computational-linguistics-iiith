@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RDIP Project UNIT 4</title>
-    <link rel="stylesheet"  href="../css/Unit4Experiment.css">
+    <link rel="stylesheet" href="../css/Unit4Experiment.css">
     <script src="../../Libraries/jquery-3.5.1.js"></script>
 </head>
+
 <body>
     <!-- heading -->
     <h1>Experiment</h1>
@@ -22,22 +24,28 @@
     <p id="f1"></p>
     <p id="f2"></p>
     <table id="table">
-            <tr>
-                <td>#tokens:</td>
-                <td><input id="token" class="inp" type="text"></td>
-            </tr>
-            <tr>
-                <td>#types:</td>
-                <td><input id="types" class="inp" type="text"></td>
-            </tr>
+        <tr>
+            <td>#tokens:</td>
+            <td><input id="token" class="inp" type="text"></td>
+        </tr>
+        <tr>
+            <td>#types:</td>
+            <td><input id="types" class="inp" type="text"></td>
+        </tr>
     </table>
-    
+
     <button id="sub" onclick="checkAns();">Submit</button>
     <p id="disAns"></p>
-    <button id="cont">Continue</button>
-    
+    <button id="cont" onclick="rootWord();">Continue</button>
+    <p id="msg">Mannan</p>
+    <div id="lst">
+        <label>#new types:</label><br><br>
+        <input type="text" id="newtypes">
+    </div>
+    <button id="sub1">Submit</button>
 
     <!-- linking js file -->
     <script src="../js/Unit4Experiment.js"></script>
 </body>
+
 </html>
