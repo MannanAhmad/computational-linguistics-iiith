@@ -17,6 +17,8 @@ $("#cont").hide()
 $("#lst").hide()
 document.getElementById("disAns").innerText = ""
 document.getElementById("msg").innerText = ""
+document.getElementById("finalMsg").innerText = ""
+
 
 
 
@@ -25,10 +27,13 @@ let selection = document.getElementById("choose-corpus")
 run = function () {
     if (selection.value === 'corp1') {
         document.getElementById("msg").innerText = ""
+        document.getElementById("finalMsg").innerText = ""
         document.getElementById("disAns").innerHTML = ""
         document.getElementById("token").value = ""
+        document.getElementById("newtypes").value = ""
         document.getElementById("token").style.background = "white"
         document.getElementById("types").style.background = "white"
+        document.getElementById("newtypes").style.background = "white"
         document.getElementById("types").value = ""
         document.getElementById("f1").innerHTML = firstCorpus
         document.getElementById("f2").innerHTML = "Enter the correct number of tokens and types from the above corpus:"
@@ -41,10 +46,13 @@ run = function () {
     }
     else if (selection.value === 'corp2') {
         document.getElementById("msg").innerHTML = ""
+        document.getElementById("finalMsg").innerHTML = ""
         document.getElementById("disAns").innerHTML = ""
         document.getElementById("token").value = ""
+        document.getElementById("newtypes").value = ""
         document.getElementById("token").style.background = "white"
         document.getElementById("types").style.background = "white"
+        document.getElementById("newtypes").style.background = "white"
         document.getElementById("types").value = ""
         document.getElementById("f1").innerHTML = secondCorpus
         document.getElementById("f2").innerHTML = "Enter the correct number of tokens and types from the above corpus:"
@@ -56,10 +64,14 @@ run = function () {
     }
     else if (selection.value === 'corp3') {
         document.getElementById("msg").innerHTML = ""
+        document.getElementById("finalMsg").innerHTML = ""
         document.getElementById("disAns").innerHTML = ""
         document.getElementById("token").value = ""
+        document.getElementById("newtypes").value = ""
+        
         document.getElementById("token").style.background = "white"
         document.getElementById("types").style.background = "white"
+        document.getElementById("newtypes").style.background = "white"
         document.getElementById("types").value = ""
         document.getElementById("f1").innerHTML = thirdCorpus
         document.getElementById("f2").innerHTML = "Enter the correct number of tokens and types from the above corpus:"
@@ -75,6 +87,7 @@ run = function () {
         document.getElementById("f2").innerHTML = ""
         document.getElementById("disAns").innerHTML = ""
         document.getElementById("msg").innerHTML = ""
+        document.getElementById("finalMsg").innerHTML = ""
         $("#table").hide()
         $("#sub").hide()
         $("#cont").hide()
@@ -82,6 +95,7 @@ run = function () {
         $("#sub1").hide()
         document.getElementById("token").value = ""
         document.getElementById("types").value = ""
+        document.getElementById("newtypes").value = ""
     }
 
 }
@@ -278,10 +292,14 @@ function againCheckTypes() {
         }
         console.log(types);
         let finalTypes = types.filter(uniqueWordForStemmedCorpus);
+        console.log(finalTypes)
         if(document.getElementById("newtypes").value == finalTypes.length){
+            document.getElementById("newtypes").style.background = "green"
             compairFinalAns()
         }else{
-            alert("Wrong answer")
+            document.getElementById("newtypes").style.background = "red"
+            document.getElementById("finalMsg").innerHTML = "Wrong Answer"
+            document.getElementById("finalMsg").style.color = "red"
         }
         
         
@@ -302,10 +320,14 @@ function againCheckTypes() {
         }
         console.log(types);
         let finalTypes = types.filter(uniqueWordForStemmedCorpus);
+        console.log(finalTypes)
         if(document.getElementById("newtypes").value == finalTypes.length){
+            document.getElementById("newtypes").style.background = "green"
             compairFinalAns()
         }else{
-            alert("Wrong answer")
+            document.getElementById("newtypes").style.background = "red"
+            document.getElementById("finalMsg").innerHTML = "Wrong Answer"
+            document.getElementById("finalMsg").style.color = "red"
         }
         
     }
@@ -323,19 +345,26 @@ function againCheckTypes() {
             stemmer.stem();
             types.push(stemmer.getCurrent());
         }
-        let finalTypes = types.filter(uniqueWordForStemmedCorpus); 
+        console.log(types);
+        let finalTypes = types.filter(uniqueWordForStemmedCorpus);
+        // console.log(finalTypes)
         if(document.getElementById("newtypes").value == finalTypes.length){
+            document.getElementById("newtypes").style.background = "green"
             compairFinalAns()
         }else{
-            alert("Wrong answer")
+            document.getElementById("newtypes").style.background = "red"
+            document.getElementById("finalMsg").innerHTML = "Wrong Answer"
+            document.getElementById("finalMsg").style.color = "red"
         }
+        
     }
 
-    function compairFinalAns(){
-        alert("right answer")
+function compairFinalAns(){
+    document.getElementById("finalMsg").innerHTML = "Right Answer"
+    document.getElementById("finalMsg").style.color = "green"
     }
-
 }
+
 
 /*
 #token and types answer
