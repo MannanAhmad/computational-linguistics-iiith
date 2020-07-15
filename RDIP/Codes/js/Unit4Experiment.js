@@ -278,7 +278,11 @@ function againCheckTypes() {
         }
         console.log(types);
         let finalTypes = types.filter(uniqueWordForStemmedCorpus);
-        console.log(finalTypes)
+        if(document.getElementById("newtypes").value == finalTypes.length){
+            compairFinalAns()
+        }else{
+            alert("Wrong answer")
+        }
         
         
     }
@@ -298,7 +302,11 @@ function againCheckTypes() {
         }
         console.log(types);
         let finalTypes = types.filter(uniqueWordForStemmedCorpus);
-        console.log(finalTypes)
+        if(document.getElementById("newtypes").value == finalTypes.length){
+            compairFinalAns()
+        }else{
+            alert("Wrong answer")
+        }
         
     }
     else if (selection.value === 'corp3') {
@@ -315,11 +323,29 @@ function againCheckTypes() {
             stemmer.stem();
             types.push(stemmer.getCurrent());
         }
-        console.log(types);
-        let finalTypes = types.filter(uniqueWordForStemmedCorpus);
-        console.log(finalTypes)
-        
+        let finalTypes = types.filter(uniqueWordForStemmedCorpus); 
+        if(document.getElementById("newtypes").value == finalTypes.length){
+            compairFinalAns()
+        }else{
+            alert("Wrong answer")
+        }
     }
 
+    function compairFinalAns(){
+        alert("right answer")
+    }
 
 }
+
+/*
+#token and types answer
+corpus 1 : 169(tokens) 80(types)
+corpus 1 : 111(tokens) 65(types)
+corpus 1 : 219(tokens) 95(types)
+
+#newtypes answer : 
+corpus 1 : 78
+corpus 2 : 64
+corpus 3 : 91
+
+*/
