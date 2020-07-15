@@ -7,6 +7,7 @@
     <title>RDIP Project UNIT 4</title>
     <link rel="stylesheet" href="../css/Unit4Experiment.css">
     <script src="../../Libraries/jquery-3.5.1.js"></script>
+    <script src="../../Libraries/node_modules/snowball/stemmer/lib/Snowball.min.js"></script>
 </head>
 
 <body>
@@ -42,7 +43,7 @@
         <label>#new types:</label><br><br>
         <input type="text" id="newtypes">
     </div>
-    <button id="sub1">Submit</button>
+    <button id="sub1" onclick="againCheckTypes();">Submit</button>
 
     <!-- linking js file -->
     <script src="../js/Unit4Experiment.js"></script>
