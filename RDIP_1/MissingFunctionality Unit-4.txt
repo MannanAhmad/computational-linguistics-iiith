@@ -1,0 +1,69 @@
+
+*****  Functionality presented in Unit - 4 *****
+
+1. Index.html page contains js, jquery that linked this page to the other pages.
+
+2. When clicked on the INTRODUCTION, it is redirecting to the Introduction.html page.
+
+    This page contains basic information about the experiment.
+
+
+
+3. When clicked on THEORY, it is redirecting to the Theory.html page. This page
+
+    contains JS plugin's, Bootstrap core javaScript and basic information about what is a clause
+
+    and classification of clauses.
+
+
+
+4. When clicked on OBJECTIVE, it is redirecting to the Objective.html page. This
+
+    the page contains information and the objective of this experiment.
+
+
+5.  When clicked on EXPERIMENT then ,
+
+(a) Dropdown Corpus1, Corpus2, Corpus3 is appeared.
+(b) Corpus data is appear when choose selection.
+(c) "Enter the number of tokens and types for the above corpus" input fields is appear in the form of table.
+      it takes two data,
+     (i) #tokens  
+    (ii) #types 
+(d) On clicking Submit Button,
+ if any one of the field has wrong answer then,
+     (1) Input box become RED.
+     (2) Message appears as "Wrong Answer" 
+if both the fields has right answers then,
+     (1) Input box become GREEN.
+     (2) Message appears as "Right Answer" 
+     (3) Continue Button is appear			
+
+(6) When clicked on Continue Button Submit button hidden and,
+   (a) "Now, consider all the tokens with the same 'root' word to be of the same type. Recalculate the number of types." text is appeared.		
+   (b)  #New types input field is appear.			
+   (c)  Submit button is appear
+
+(7) When clicked on Submit button,
+    if field has wrong answer then,
+   (a) input box become RED
+   (b) Message display as "Wrong answer"
+    if field has wrong answer then,
+   (a) input box become GREEN
+   (b) Message display as "Right answer"
+
+
+***** Missing Functionality which should be added in this lab. *****
+
+1. When clicked on QUIZZES link and when we are inside the QUIZZES
+
+page their functionality is missing to choose the correct option in the given question.
+
+
+
+2. The footer part is missing in the pages.
+
+
+
+3. When clicked on IIIT-H it should be redirected to the official page of IIITH.
+
