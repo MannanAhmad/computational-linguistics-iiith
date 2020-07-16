@@ -130,6 +130,18 @@ function checkAns() {
 
         const countUniqueWords = s => new Set(s.toLowerCase().match(/\w+/g)).size
         
+        // validating input field to that it takes only numeric value
+
+        var k = /^[0-9]+$/
+        if(document.getElementById("types").value=="" || document.getElementById("token").value=="" )
+        {
+            alert("Enter number of tokens and types")
+        }
+        
+        else if ( (!document.getElementById("types").value.match(k) ) || (!document.getElementById("token").value.match(k) ) )
+        {
+            alert("please enter numeric value only.")
+        }
 
         // alert(`A has ${countUniqueWords(a)} unique words`);
         if (document.getElementById("types").value == countUniqueWords(token)) {
@@ -182,6 +194,19 @@ function checkAns() {
 
         const countUniqueWords = s => new Set(s.toLowerCase().match(/\w+/g)).size
 
+         // validating input field to that it takes only numeric value
+        
+         var k = /^[0-9]+$/
+         if(document.getElementById("types").value=="" || document.getElementById("token").value=="" )
+         {
+             alert("Enter number of tokens and types")
+         }
+         
+         else if ( (!document.getElementById("types").value.match(k) ) || (!document.getElementById("token").value.match(k) ) )
+         {
+             alert("please enter numeric value only.")
+         }
+
         // alert(`A has ${countUniqueWords(a)} unique words`);
         if (document.getElementById("types").value == countUniqueWords(token)) {
 
@@ -232,6 +257,19 @@ function checkAns() {
         // count unique words
 
         const countUniqueWords = s => new Set(s.toLowerCase().match(/\w+/g)).size
+
+         // validating input field to that it takes only numeric value
+        
+         var k = /^[0-9]+$/
+         if(document.getElementById("types").value=="" || document.getElementById("token").value=="" )
+         {
+             alert("Enter number of tokens and types")
+         }
+         
+         else if ( (!document.getElementById("types").value.match(k) ) || (!document.getElementById("token").value.match(k) ) )
+         {
+             alert("please enter numeric value only.")
+         }
 
         // alert(`A has ${countUniqueWords(a)} unique words`);
         if (document.getElementById("types").value == countUniqueWords(token)) {
@@ -290,9 +328,23 @@ function againCheckTypes() {
             stemmer.stem();
             types.push(stemmer.getCurrent());
         }
-        console.log(types);
+        // console.log(types);
         let finalTypes = types.filter(uniqueWordForStemmedCorpus);
-        console.log(finalTypes)
+        // console.log(finalTypes)
+
+         // validating input field to that it takes only numeric value
+        
+         var k = /^[0-9]+$/
+         if(document.getElementById("newtypes").value=="")
+         {
+             alert("Enter number of new types")
+         }
+         
+         else if ( (!document.getElementById("newtypes").value.match(k) ))
+         {
+             alert("please enter numeric value only.")
+         }
+
         if(document.getElementById("newtypes").value == finalTypes.length){
             document.getElementById("newtypes").style.background = "green"
             compairFinalAns()
@@ -318,9 +370,23 @@ function againCheckTypes() {
             stemmer.stem();
             types.push(stemmer.getCurrent());
         }
-        console.log(types);
+        // console.log(types);
         let finalTypes = types.filter(uniqueWordForStemmedCorpus);
-        console.log(finalTypes)
+        // console.log(finalTypes)
+
+        // validating input field to that it takes only numeric value
+        
+        var k = /^[0-9]+$/
+        if(document.getElementById("newtypes").value=="")
+        {
+            alert("Enter number of new types")
+        }
+        
+        else if ( (!document.getElementById("newtypes").value.match(k) ))
+        {
+            alert("please enter numeric value only.")
+        }
+
         if(document.getElementById("newtypes").value == finalTypes.length){
             document.getElementById("newtypes").style.background = "green"
             compairFinalAns()
@@ -345,9 +411,23 @@ function againCheckTypes() {
             stemmer.stem();
             types.push(stemmer.getCurrent());
         }
-        console.log(types);
+        // console.log(types);
         let finalTypes = types.filter(uniqueWordForStemmedCorpus);
         // console.log(finalTypes)
+
+        // validating input field to that it takes only numeric value
+        
+        var k = /^[0-9]+$/
+        if(document.getElementById("newtypes").value=="")
+        {
+            alert("Enter number of new types")
+        }
+        
+        else if ( (!document.getElementById("newtypes").value.match(k) ))
+        {
+            alert("please enter numeric value only.")
+        }
+
         if(document.getElementById("newtypes").value == finalTypes.length){
             document.getElementById("newtypes").style.background = "green"
             compairFinalAns()
@@ -364,17 +444,3 @@ function compairFinalAns(){
     document.getElementById("finalMsg").style.color = "green"
     }
 }
-
-
-/*
-#token and types answer
-corpus 1 : 169(tokens) 80(types)
-corpus 1 : 111(tokens) 65(types)
-corpus 1 : 219(tokens) 95(types)
-
-#newtypes answer : 
-corpus 1 : 78
-corpus 2 : 64
-corpus 3 : 91
-
-*/

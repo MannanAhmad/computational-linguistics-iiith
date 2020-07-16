@@ -10,6 +10,8 @@ h1 {
     font-weight:500;
 }
 
+/* dropdown menu styling */
+
 #choose-corpus {
     padding: 3px;
     border: 2px solid black;
