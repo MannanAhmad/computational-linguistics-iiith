@@ -14,3 +14,26 @@ let hindiSentences = ["राम ने सीता के लिए फल त
 
 // alert(englishSentences)
 // alert(hindiSentences)
+
+$("#english").hide()
+$("#hindi").hide()
+
+let selectLng = document.getElementById("choose-lang")
+function selectLanguage() {
+    if (selectLng.value === "eng") {
+        $("#hindi").hide()
+        $("#english").show()
+    
+    }
+    else if (selectLng.value === "hnd") {
+        $("#english").hide()
+        $("#hindi").show()
+
+    }
+    else {
+        alert("Select Language")
+        $("#english").hide()
+        $("#hindi").hide()
+    }
+}
+
