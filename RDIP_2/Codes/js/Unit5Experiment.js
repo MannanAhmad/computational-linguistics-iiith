@@ -15,6 +15,7 @@ let hindiSentences = ["राम ने सीता के लिए फल त
 
 $("#english").hide()
 $("#hindi").hide()
+$("#sub").hide()
 document.getElementById("msg").innerHTML = ""
 document.getElementById("tbl").innerHTML = " "
 
@@ -22,6 +23,7 @@ let selectLng = document.getElementById("choose-lang")
 function selectLanguage() {
     if (selectLng.value === "eng") {
         $("#hindi").hide()
+        $("#sub").hide()
         $("#english").show()
         document.getElementById("msg").innerHTML = ""
         document.getElementById("tbl").innerHTML = " "
@@ -31,6 +33,7 @@ function selectLanguage() {
     else if (selectLng.value === "hnd") {
         $("#english").hide()
         $("#hindi").show()
+        $("#sub").hide()
         document.getElementById("msg").innerHTML = ""
         document.getElementById("tbl").innerHTML = " "
         document.getElementById("english").value = "default"
@@ -40,6 +43,7 @@ function selectLanguage() {
         alert("Select Language")
         $("#english").hide()
         $("#hindi").hide()
+        $("#sub").hide()
         document.getElementById("msg").innerHTML = ""
         document.getElementById("tbl").innerHTML = " "
         document.getElementById("english").value = "default"
@@ -50,6 +54,7 @@ function selectLanguage() {
 
 function selectSentence(){
     document.getElementById("msg").innerHTML = "Select the POS tag for corresponding words"
+    $("#sub").show()
     if(selectLng.value === "eng"){
         let engSent = document.getElementById("english").value
         if(engSent == "firstEng"){
@@ -74,7 +79,9 @@ function selectSentence(){
         }
         if(engSent =="default"){
             alert("Select a sentence")
+            $("#sub").hide()
             document.getElementById("msg").innerHTML = ""
+            document.getElementById("tbl").innerHTML = ""
         }
     }
     else if(selectLng.value === "hnd"){
@@ -102,6 +109,7 @@ function selectSentence(){
         }
         if(hndSent =="default"){
             alert("Select a sentence")
+            $("#sub").hide()
             document.getElementById("msg").innerHTML = ""
             document.getElementById("tbl").innerHTML = " "
         }
@@ -118,6 +126,7 @@ function showValueInTable(sentence){
 	{	createRowsInTable = ""
 		for(i = 0 ; i<splitSen.length ; i++){
             // added dropdown consiting of 9 POS tags for english
+            //default value is noun so noun is selected automatically first time
            createRowsInTable += "<tr><td>"+splitSen[i]+"</td><td><select><option value = 'Noun'>Noun</option><option value = 'Pronoun'>Pronoun</option><option value = 'Verb'>Verb</option><option value = 'Adjective'>Adjective</option><option value = 'Adverb'>Adverb</option><option value = 'Determiner'>Determiner</option><option value = 'Preposition'>Preposition</option><option value = 'Conjunction'>Conjunction</option><option value = 'Interjection'>Interjection</option></select></td><td></td><td></td></tr>";
 		}
 	}
@@ -125,6 +134,7 @@ function showValueInTable(sentence){
 	{	createRowsInTable = ""
 		for(i = 0 ; i<splitSen.length ; i++){
             // added dropdown consiting of 8 POS tags for hindi
+            //default value is noun so noun is selected automatically first time
             createRowsInTable += "<tr><td>"+splitSen[i]+"</td><td><select><option value = 'Noun'>Noun</option><option value = 'Pronoun'>Pronoun</option><option value = 'Verb'>Verb</option><option value = 'Adjective'>Adjective</option><option value = 'Adverb'>Adverb</option><option value = 'Postposition'>Postposition</option><option value = 'Conjunction'>Conjunction</option><option value = 'Interjection'>Interjection</option></select></td><td></td><td></td></tr>";
 		}
 	}
