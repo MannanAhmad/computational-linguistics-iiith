@@ -1,6 +1,7 @@
 *{
     padding: 0px;
     margin: 0px;
+    font-family: Verdana,Tahoma, sans-serif;
 }
 
 /* heading styling */
@@ -33,3 +34,32 @@ h1 {
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
+#msg{
+    margin-top: 130px;
+    font-family: Verdana,Tahoma, sans-serif;
+    font-size: 21px;
+    text-align: center;
+    font-style: italic;
+    color: blue;
+
+}
+
+#tbl{
+    /* border: 1px solid black; */
+    margin: 0 auto;
+    border-collapse: collapse;
+    margin-top: 25px;
+}
+th,td{
+    border:1px solid black;
+    padding:8px;
+    font-size: 24px;
+}
+th{
+    color:rgb(158, 93, 93)
+}
+td select{
+    font-size: 20px;
+}
+
