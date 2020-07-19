@@ -1,3 +1,14 @@
+var pos = require('pos');
+var words = new pos.Lexer().lex('This is some sample text. This text can contain multiple sentences.'); 
+var tagger = new pos.Tagger();
+var taggedWords = tagger.tag(words);
+for (i in taggedWords) {
+    var taggedWord = taggedWords[i];
+    var word = taggedWord[0];
+    var tag = taggedWord[1];
+    console.log(word + " /" + tag);
+}
+
 let englishSentences = ["The child liked the chocolate",
     "She was stopped by the bravest knight",
     "Mary baked a cake for his birthday",
@@ -142,3 +153,6 @@ function showValueInTable(sentence){
     
 }
 
+window.selectLanguage = selectLanguage
+window.selectSentence = selectSentence
+window.showValueInTable = showValueInTable
