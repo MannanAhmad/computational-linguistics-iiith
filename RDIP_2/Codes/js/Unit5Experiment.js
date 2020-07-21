@@ -1,5 +1,6 @@
 var pos = require('pos');
-var words = new pos.Lexer().lex('This is some sample text. This text can contain multiple sentences.'); 
+
+var words = new pos.Lexer().lex('She decorated the cake carefully'); 
 var tagger = new pos.Tagger();
 var taggedWords = tagger.tag(words);
 for (i in taggedWords) {
@@ -134,15 +135,31 @@ function showValueInTable(sentence){
     document.getElementById("tbl").innerHTML = " "
     splitSen = sentence.split(" ")
     if(selectLng.value === "eng")
-	{	createRowsInTable = ""
-		for(i = 0 ; i<splitSen.length ; i++){
-            // added dropdown consiting of 9 POS tags for english
-            //default value is noun so noun is selected automatically first time
-           createRowsInTable += "<tr><td>"+splitSen[i]+"</td><td><select><option value = 'Noun'>Noun</option><option value = 'Pronoun'>Pronoun</option><option value = 'Verb'>Verb</option><option value = 'Adjective'>Adjective</option><option value = 'Adverb'>Adverb</option><option value = 'Determiner'>Determiner</option><option value = 'Preposition'>Preposition</option><option value = 'Conjunction'>Conjunction</option><option value = 'Interjection'>Interjection</option></select></td><td></td><td></td></tr>";
-		}
-	}
+    {	createRowsInTable = ""
+            var words = new pos.Lexer().lex(sentence); 
+            var tagger = new pos.Tagger();
+            var taggedWords = tagger.tag(words);
+            for (i in taggedWords) {
+                var taggedWord = taggedWords[i];
+                var word = taggedWord[0];
+                var tag = taggedWord[1];
+                console.log(word + " /" + tag);
+              
+                createRowsInTable += "<tr><td>"+word+"</td><td><select><option value = 'Noun'>Noun</option><option value = 'Pronoun'>Pronoun</option><option value = 'Verb'>Verb</option><option value = 'Adjective'>Adjective</option><option value = 'Adverb'>Adverb</option><option value = 'Determiner'>Determiner</option><option value = 'Preposition'>Preposition</option><option value = 'Conjunction'>Conjunction</option><option value = 'Interjection'>Interjection</option></select></td><td></td><td></td></tr>";
+            }}
 	else if(selectLng.value === "hnd")
-	{	createRowsInTable = ""
+    {	createRowsInTable = ""
+
+    var words = new pos.Lexer().lex(sentence); 
+    var tagger = new pos.Tagger();
+    var taggedWords = tagger.tag(words);
+    for (i in taggedWords) {
+        var taggedWord = taggedWords[i];
+        var word = taggedWord[0];
+        var tag = taggedWord[1];
+        console.log(word + " /" + tag);
+    }
+
 		for(i = 0 ; i<splitSen.length ; i++){
             // added dropdown consiting of 8 POS tags for hindi
             //default value is noun so noun is selected automatically first time
@@ -153,6 +170,44 @@ function showValueInTable(sentence){
     
 }
 
+function submitButton(sentence){
+    document.getElementById("tbl").innerHTML = " "
+    if(selectLng.value === "eng")
+    {	createRowsInTable = ""
+            var words = new pos.Lexer().lex(sentence); 
+            var tagger = new pos.Tagger();
+            var taggedWords = tagger.tag(words);
+            for (i in taggedWords) {
+                var taggedWord = taggedWords[i];
+                var word = taggedWord[0];
+                var tag = taggedWord[1];
+                console.log(word + " /" + tag);
+                if(tag=="NN" || tag=="NNP" || tag=="NNS"){
+                    tag="Noun";
+                }
+                else if(tag=="VBN" || tag=="VBD"){
+                    tag="Verb";
+                }
+                else if(tag=="JJ" || tag=="JJS"){
+                    tag="Adjective";
+                }
+                else if(tag=="PRP" || tag=="PRP$"){
+                    tag="Pronoun";
+                }
+                else if(tag=="IN"){
+                    tag="Preposition";
+                }
+                else if(tag=="RB"){
+                    tag="Adverb";
+                }
+                else if(tag=="DT"){
+                    tag="Determiner";
+                }
+                createRowsInTable += "<tr><td>"+word+"</td><td><select><option value = 'Noun'>Noun</option><option value = 'Pronoun'>Pronoun</option><option value = 'Verb'>Verb</option><option value = 'Adjective'>Adjective</option><option value = 'Adverb'>Adverb</option><option value = 'Determiner'>Determiner</option><option value = 'Preposition'>Preposition</option><option value = 'Conjunction'>Conjunction</option><option value = 'Interjection'>Interjection</option></select></td><td></td><td>"+tag+"</td></tr>";
+            }}
+}
+
 window.selectLanguage = selectLanguage
 window.selectSentence = selectSentence
 window.showValueInTable = showValueInTable
+window.submitButton = submitButton
